@@ -104,6 +104,67 @@ for better readability and accessibility.-->
     <textarea class="form-control" aria-label="message" placeholder="..."></textarea>
   </div>
 
+  <!-- Part 2 Starts here...Styling Forms and Floating Labels-->
+
+</div>
+  <!-- Task 1: Style form elements using Bootstrap's form control classes.-->
+
+   <!-- Expected Outcome: Form fields with validation feedback displayed upon invalid input.-->
+   <h2 class="text-muted text-center">Part 2 Task 1</h2>
+   <div class="form-group">
+    <form class="align-center">
+      <div class="col-md-4 m-3 p-3">
+        <label for="validationCustomUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="validationUsername" aria-label="username input" required>
+          <div class="invalid-feedback">
+            Please choose a valid username.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 m-3 p-3">
+        <label for="validationCustomUsername" class="form-label">Password</label>
+        <div class="input-group has-validation">
+         
+          <input type="text" class="form-control" id="validationUsername" aria-label="password input" required>
+          <div class="invalid-feedback">
+            Please choose a valid password.
+          </div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-outline-success" type="submit">Join for Free!</button>
+    </form>
+  </div>
+</div>
+</div>
+
+<script>
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+
 </div>
 
 </body>
